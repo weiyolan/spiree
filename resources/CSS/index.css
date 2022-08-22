@@ -1,0 +1,207 @@
+*{
+    font-family: 'Inter', sans-serif;
+    /* font-size: 1em;; */
+    /* border:1px solid #fe1b07; */
+}
+
+/*main {
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+}*/
+
+body {
+    background-color: #f2d5a0;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    background-color: #f2d5a0;
+    width:100%;
+    top: 0px;
+}
+
+ul {
+    display:flex;
+}
+header img {
+    max-width:100px;
+    padding:10px;
+}
+
+header li{
+    list-style: none;
+    padding: 5px;
+    margin: 0 10px;
+    border: 3px solid #FFFFFF;
+    border-radius: 8px;
+    background-color: white;
+    color:#f2d5a0;
+}
+
+/* header li:clicked */
+
+h1 {
+    color: #b67d6b;
+    max-width: 750px;
+    margin: 30px auto;
+    font-weight:500;
+}
+
+p {
+    text-align: center;
+    padding:10px;
+    font-weight: 350;
+}
+
+footer {
+    justify-content: center;
+}
+
+hr {
+    border:none;
+    border-top:5px dotted #b67d6b;
+    height:1px;
+    width:100%;
+  }
+
+.banner {
+    /* max-width:100%; */
+    /* max-height: ; */
+    height: 500px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    background-image: url('../images/spiree-banner.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+.banner-element {
+    height: 200px;
+    /* margin-top:50px; */
+    /* height: auto; */
+    max-width: 500px;
+}
+.banner-element h1{
+    font-size: 5em;
+    color:white;
+}
+
+.chapter {
+    max-width:1000px;
+    margin: 30px auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.box {
+    max-width:1000px;
+    /* flex:1 1 750px; */
+    /* height: 30%; */
+    margin: 50px auto;
+    border: 5px solid #FFFFFF;
+    background-color: #f7e5c5;
+    display:flex;
+    justify-content: center;
+    /* overflow:scroll; */
+    flex:auto;
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.box:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.advantage {
+    display:flex;
+    flex-direction: column;
+    /* justify-content:center; */
+    /* align-items: baseline; */
+    /* max-width: 180px; */
+    margin: 5px;
+    flex-basis:20%;
+    flex:auto;
+}
+
+.advantage h2 {
+    /* color:red; */
+    font-size: 1em;;
+    text-align: center;
+    /* margin:15px auto; */
+}
+.advantage img {
+    max-width:50%;
+    height:auto; 
+    margin:0 auto;
+}
+.advantage p {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.histoire {
+    max-width:1000px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.histoire.title h1 {
+    flex-basis: 375px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 3em;
+    /* color:#0e86ff */
+}
+
+.histoire.text{
+    flex-basis: 375px;
+}
+.histoire.text p{
+    text-align: right;
+}
+.socials {
+    margin: 20px;
+}
+
+#idioma {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* .left {
+    float:left;
+    clear: left;
+}
+
+.right {
+    float:right;
+    clear: right;
+} */
+
+
+@media only screen and (max-width: 1000px) {
+    p {
+        font-size: 12px;
+    }
+
+    hr {
+        width: 80%
+    }
+
+    .banner-element {
+        height: 200px;
+        /* margin-top:50px; */
+        /* height: auto; */
+        max-width: 300px;
+    }
+    .banner-element h1{
+        font-size: 3em;
+        color:white;
+    }
+}
