@@ -120,7 +120,7 @@ header li:hover {
     color: var(--color-box-title);
 }
 header li a {
-    /* color: white; */
+    color: var(--color-accent);
     /* text-decoration: none; */
 }
 header li a:visited {
