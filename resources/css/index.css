@@ -8,9 +8,27 @@
 
 }
 
+:root {
+    /* --color-main-light: #f2d5a0; */
+    /* --color-box-light:#f7e5c5;
+    /* --color-accent: #b67d6b; */
+    /* --color-box-border:white; */
+    /* --color-box-title: #b67d6b */
+    /* --color-shadow: rgba(0, 0, 0, 0.2); */
+
+    --color-main-light:#faa788;
+    --color-box-light:#d8f1ff;
+    --color-box-border:rgb(191, 125, 105);
+    --color-accent: #fff;
+    --color-box-title:#b67d6b;
+    --color-shadow: #00000023;
+
+}
+
 html {
     /* Good to define. */
     font-size: 14px;
+    text-align: center;
 }
 
 a {
@@ -25,7 +43,8 @@ a {
 }*/
 
 body {
-    background-color: #f2d5a0;
+    background-color: var(--color-main-light);
+    /* display:flex; */
     /* width: 100%; */
     /* align-items: center;
     justify-content: center; 
@@ -43,7 +62,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    background-color: #f2d5a0;
+    background-color: var(--color-main-light);
     width:100%;
     top: 0px;
     /* max-height:60px; */
@@ -63,11 +82,11 @@ header img {
     min-width: 0px;
     max-width: 30%;
     min-height: 0px;
-    max-height: 80px;
+    max-height: 60px;
     flex-shrink: 5;
     /* float: left; */
     /* max-height:70px; */
-    /* padding:10px 0px; */
+    padding:5px;
     /* flex:1; */
     /* margin-right: 10px; */
 }
@@ -81,7 +100,7 @@ header li{
     display:flex;
     padding: 5px;
     margin: 0 5px;
-    color:#f2d5a0;
+    color: var(--color-main-light);
     font-weight: 600;
     border: 2px solid #ffffff00;
     inline-size: max-content;
@@ -97,11 +116,12 @@ header li:hover {
     text-decoration-color: rgba(255, 255, 255,1); */
     border: 2px solid #ffffff4b;
     border-radius: 0.5em;
-    background-color: #f7e5c5;
+    background-color: var(--color-box-light);
+    color: var(--color-box-title);
 }
 header li a {
-    color: white;
-    text-decoration: none;
+    /* color: white; */
+    /* text-decoration: none; */
 }
 header li a:visited {
     color: white;
@@ -110,11 +130,12 @@ header li a:visited {
  }
 
 h1 {
-    color: #b67d6b;
+    color: var(--color-accent);
     max-width: 750px;
     margin: 20px auto;
     font-weight:500;
     font-size: 2rem;
+    text-align: center;
 }
 
 p {
@@ -129,7 +150,7 @@ footer {
 
 hr {
     border:none;
-    border-top:5px dotted #b67d6b;
+    border-top:5px dotted var(--color-accent);
     height:1px;
     width:100%;
   }
@@ -178,12 +199,15 @@ hr {
     flex:1 2;
     /* max-width: 25%; */
 }
+
 .chapter {
     max-width:1000px;
     margin: 30px auto;
+    padding: 0 30px;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     overflow:visible;
     scroll-margin-top: 60px;
 }
@@ -192,9 +216,9 @@ hr {
     /* max-width:1000px; */
     /* flex:1 1 750px; */
     /* height: 30%; */
-    margin: 30px 30px;
-    border: 5px solid #FFFFFF;
-    background-color: #f7e5c5;
+    margin: 30px auto;
+    border: 5px solid var(--color-box-border);
+    background-color: var(--color-box-light);
     display:flex;
     justify-content: center;
     /* overflow:hidden; */
@@ -203,7 +227,7 @@ hr {
 }
 
 .box:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 var(--color-shadow), 0 6px 20px 0 var(--color-shadow);
     transform:scale(1.01) ;
 }
 
@@ -234,7 +258,7 @@ hr {
     /* width:100%; */
     /* color:red; */
     font-size: calc(0.7rem + 0.5vw);
-    color:#b67d6b;
+    color:var(--color-box-title);
     text-align: center;
     margin:5px;
 }
@@ -282,25 +306,15 @@ hr {
 }
 
 #idioma {
-    /* font-family: 'Raleway', cursive; */
-    font-size: 2em;
-    /* color: white; */
-    /* font-style: italic; */
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: lighter;
+    color: var(--color-accent);
 }
 
 #stay-in-touch:hover {
     cursor:pointer;
 }
-
-/* .left {
-    float:left;
-    clear: left;
-}
-
-.right {
-    float:right;
-    clear: right;
-} */
 
 
 @media only screen and (max-width: 1000px) {
@@ -315,9 +329,10 @@ hr {
         font-size: 0.8em;
     }
 
-    hr {
+    /* hr {
+        text-align: center;
         width: 80%
-    }
+    } */
 
     .banner {
         height: 300px ;
@@ -347,9 +362,10 @@ hr {
         font-size: 0.8em;
     }
 
-    hr {
+    /* hr {
+        text-align: center;
         width: 80%
-    }
+    } */
 
     .banner {
         height: 200px ;
