@@ -9,13 +9,14 @@
 }
 
 :root {
-    /* --color-main-light: #f2d5a0; */
-    /* --color-box-light:#f7e5c5;
-    /* --color-accent: #b67d6b; */
-    /* --color-box-border:white; */
-    /* --color-box-title: #b67d6b */
-    /* --color-shadow: rgba(0, 0, 0, 0.2); */
-
+    /*THEME*/
+    /* --color-main-light: #f2d5a0;
+    --color-box-light:#f7e5c5;
+    --color-accent: #b67d6b;
+    --color-box-border:white;
+    --color-box-title: #b67d6b
+    --color-shadow: rgba(0, 0, 0, 0.2); */
+    /*THEME*/
     --color-main-light:#faa788;
     --color-box-light:#d8f1ff;
     --color-box-border:rgb(191, 125, 105);
@@ -89,6 +90,10 @@ header img {
     padding:5px;
     /* flex:1; */
     /* margin-right: 10px; */
+    /* filter: drop-shadow(0 0 1rem white); */
+    z-index: 10;
+    filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.342));
+
 }
 header ul {
     display:flex;
@@ -142,6 +147,8 @@ p {
     text-align: center;
     padding:10px;
     font-weight: 350;
+    /* font-size:clamp(1.5rem,1.8vw,1.8rem); */
+
 }
 
 footer {
@@ -179,6 +186,8 @@ hr {
     /* margin-top:50px; */
     /* height: auto; */
     max-width: 30%;
+    filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342));
+
 }
 .banner-element h1{
     font-size: 5em;
@@ -197,6 +206,8 @@ hr {
     display:block;
     max-width: 100%;
     flex:1 2;
+    /* filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342)); */
+    filter: invert(57%) sepia(52%) saturate(4679%) hue-rotate( 164deg ) brightness(93%) contrast(101%);
     /* max-width: 25%; */
 }
 
@@ -239,14 +250,13 @@ hr {
     /* align-content:center; */
     /* justify-content:center; */
     /* width: 19%; */
-
     margin: 5px;
-    
     display:flex;
     flex-basis:19%;
     flex:auto;
     flex-direction: column;
     overflow: hidden;
+    overflow-wrap: anywhere;
     align-items: center;
     /* justify-content:center; */
 }
@@ -254,12 +264,13 @@ hr {
 .advantage h2 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* overflow-wrap: break-word; */
+    /* align-items: center; */
     /* width:100%; */
     /* color:red; */
     font-size: calc(0.7rem + 0.5vw);
-    color:var(--color-box-title);
-    text-align: center;
+    color: var(--color-box-title);
+    /* text-align: center; */
     margin:5px;
 }
 .advantage img {
@@ -353,8 +364,12 @@ hr {
 
 @media only screen and (max-width: 600px) {
     *{
-        font-size: 10px;
+        font-size: 18px;
     }
+
+    /* a minimum size between 18 to 20 pixels is recommended for smaller screen sizes */
+
+
     /* .header img {
         padding:0px;
     } */
@@ -393,4 +408,15 @@ hr {
     .advantage img{
 
     } */
+
+@media print {
+    nav {
+        display: none;
+    }
+    /* Display link when printed so readers still have access */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
 }
