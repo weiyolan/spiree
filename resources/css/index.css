@@ -207,7 +207,7 @@ hr {
     max-width: 100%;
     flex:1 2;
     /* filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342)); */
-    filter: invert(57%) sepia(52%) saturate(4679%) hue-rotate( 164deg ) brightness(93%) contrast(101%);
+    /* filter: invert(57%) sepia(52%) saturate(4679%) hue-rotate( 164deg ) brightness(93%) contrast(101%); */
     /* max-width: 25%; */
 }
 
