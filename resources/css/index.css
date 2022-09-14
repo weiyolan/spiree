@@ -23,13 +23,13 @@
     --color-accent: #fff;
     --color-box-title:#b67d6b;
     --color-shadow: #00000023;
-
 }
 
 html {
     /* Good to define. */
     font-size: 14px;
     text-align: center;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -422,6 +422,12 @@ hr {
     a[href^="http"]:after {
         content: " (" attr(href) ")";
     }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 }
