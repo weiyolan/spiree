@@ -1,4 +1,4 @@
-//----Change logo color with interval of x seconds. 
+//----Change logo color with interval of x seconds.----
 
 // let logo = document.getElementById('headerLogo');
 // let bigLogo = document.getElementById('banner-logo');
@@ -12,18 +12,37 @@
 // }
 // setInterval(setRandomColor,1000);
 
-//----Let form appear after clicking certain elements.
-let form = document.getElementById('form1');
-let titleButton = document.getElementById('stayInTouch');
-let contactMe = document.getElementById('contactMe');
+//----Let form appear after clicking certain elements.----
 
-function formAppear() {
-    form.style.display = 'block';
-    // alert('Clicked!');
-}
+// let form = document.getElementById('form1');
+// let titleButton = document.getElementById('stayInTouch');
+// let contactMe = document.getElementById('contactMe');
+//
+// function formAppear() {
+//     form.style.display = 'block';
+// }
+//
+// titleButton.addEventListener('click',formAppear);
+// contactMe.addEventListener('click',formAppear);
 
-titleButton.addEventListener('click',formAppear);
-contactMe.addEventListener('click',formAppear);
+//----Let chapters appear on scroll
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
 
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        } else {
+            reveals[i].classList.remove("active");
+        };
+    };
+};
 
-
+document.addEventListener("scroll", reveal);
+document.addEventListener("load",reveal);
+// To check the scroll position on page load
+// reveal();
