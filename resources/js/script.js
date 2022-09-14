@@ -12,18 +12,18 @@
 // }
 // setInterval(setRandomColor,1000);
 
-//----Let form appear after clicking certain elements.----
+// ----Let form appear after clicking certain elements.----
 
-// let form = document.getElementById('form1');
-// let titleButton = document.getElementById('stayInTouch');
-// let contactMe = document.getElementById('contactMe');
-//
-// function formAppear() {
-//     form.style.display = 'block';
-// }
-//
-// titleButton.addEventListener('click',formAppear);
-// contactMe.addEventListener('click',formAppear);
+let form = document.getElementById('form1');
+let titleButton = document.getElementById('stayInTouch');
+let contactMe = document.getElementById('contactMe');
+
+function formAppear() {
+    form.style.opacity = 1;
+}
+
+titleButton.addEventListener('click',formAppear);
+contactMe.addEventListener('click',formAppear);
 
 //----Let chapters appear on scroll
 function reveal() {
@@ -32,7 +32,7 @@ function reveal() {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
+        var elementVisible = 100;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
