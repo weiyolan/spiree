@@ -93,6 +93,7 @@ header img {
     /* filter: drop-shadow(0 0 1rem white); */
     z-index: 10;
     filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.342));
+    /* transition:0.2s; */
 
 }
 header ul {
@@ -161,6 +162,10 @@ hr {
     height:1px;
     width:100%;
   }
+
+#form1 {
+    display:none;
+}
 
 .banner {
     height: 400px ;
@@ -323,7 +328,7 @@ hr {
     color: var(--color-accent);
 }
 
-#stay-in-touch:hover {
+#stayInTouch:hover {
     cursor:pointer;
 }
 
