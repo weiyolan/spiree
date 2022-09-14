@@ -43,6 +43,6 @@ function reveal() {
 };
 
 document.addEventListener("scroll", reveal);
-document.addEventListener("load",reveal);
+// document.addEventListener("load",reveal);
 // To check the scroll position on page load
 // reveal();
