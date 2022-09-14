@@ -9,21 +9,21 @@
 }
 
 :root {
-    /*THEME*/
-    /* --color-main-light: #f2d5a0;
+    /*THEME---------------------------------------*/
+    /* --color-main-light: #000000;
     --color-box-light:#f7e5c5;
     --color-accent: #b67d6b;
     --color-box-border:white;
     --color-box-title: #b67d6b
     --color-shadow: rgba(0, 0, 0, 0.2); */
-    /*THEME*/
+    /*THEME---------------------------------------*/
     --color-main-light:#faa788;
     --color-box-light:#d8f1ff;
     --color-box-border:rgb(191, 125, 105);
     --color-accent: #fff;
     --color-box-title:#b67d6b;
     --color-shadow: #00000023;
-
+    /*-------------------------------------------*/
     --scroll-offset:60px;
 }
 
@@ -173,14 +173,19 @@ hr {
 
 .banner {
     height: 400px ;
+    width: 100%;
+    margin: 0px auto;
     /* height: 500px;  */
-    position:relative;
+    /* position:relative; */
     /* top:50px; */
     /* margin-top: 0px; */
     /* max-width:auto; */
     display: flex;
-    justify-content: space-around;
+    /* justify-items: center; */
+    /* justify-content: space-between; */
     align-items: center; 
+    /* align-content: center; */
+
     background-image: url('../images/spiree-banner.jpg');
     background-repeat: no-repeat;
     background-size:cover;
@@ -190,11 +195,13 @@ hr {
 .banner-element {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-height: auto;
+    /* align-items: center; */
+    /* justify-items: center; */
+    /* max-height: auto; */
     /* margin-top:50px; */
     /* height: auto; */
-    max-width: 30%;
+    width: 30%;
+    margin:0 auto;
     filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342));
 
 }
@@ -202,18 +209,18 @@ hr {
     font-size: 5em;
     color:white;
     margin-bottom: 0;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     /* text-align: start; */
 }
 .banner-element h2{
     font-weight: 300;
     margin-top: 0;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 
 }
 .banner img{
-    display:block;
-    max-width: 100%;
+    display: flex;
+    width: 100%;
     flex:1 2;
     /* filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342)); */
     /* filter: invert(57%) sepia(52%) saturate(4679%) hue-rotate( 164deg ) brightness(93%) contrast(101%); */
@@ -338,7 +345,8 @@ hr {
 }
 
 #form1 {
-    display:none;
+    opacity: 0;
+    /* transition: ; */
 }
 
 #idioma {
@@ -350,10 +358,6 @@ hr {
 
 #stayInTouch:hover {
     cursor:pointer;
-}
-
-#thermo {
-    display: none;
 }
 
 
@@ -409,9 +413,66 @@ hr {
     /* .banner {
         height: 200px ;
     } */
-    .banner-element h1{
-        font-size: 3rem;
+    .banner {
+        height: 400px ;
+        width: 100%;
+        margin: 0px auto;
+        /* height: 500px;  */
+        /* position:relative; */
+        /* top:50px; */
+        /* margin-top: 0px; */
+        /* max-width:auto; */
+        display: flex;
+        flex-direction: column;
+        /* justify-items: center; */
+        justify-content: space-around;
+        align-items: center; 
+        /* align-content: center; */
+    
+        background-image: url('../images/spiree-banner.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center;
+        color:white;
     }
+    .banner-element {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-items: center; */
+        /* max-height: auto; */
+        /* margin-top:50px; */
+        /* height: auto; */
+        width: 80%;
+        justify-content: center;
+        /* justify-items: center; */
+        /* align-items: center; */
+        margin:0 auto;
+        filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342));
+    
+    }
+    .banner-element h1{
+        font-size: 2.5rem;
+
+        /* margin:0 auto; */
+        /* text-align: start; */
+    }
+
+    .banner-element h2{
+        /* font-weight: 300; */
+        /* margin-top: 0; */
+        /* margin-left: 30px; */
+    
+    }
+    .banner img{
+        display: flex;
+        width: 100%;
+        flex:1 2;
+        /* filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342)); */
+        /* filter: invert(57%) sepia(52%) saturate(4679%) hue-rotate( 164deg ) brightness(93%) contrast(101%); */
+        /* max-width: 25%; */
+    }
+
     .advantage-container {
         flex-direction: column;
         width: 80%
