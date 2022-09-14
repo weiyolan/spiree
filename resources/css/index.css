@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border:1px solid #fe1b07;
+    /* border:1px solid #fe1b07; */
     /* border-radius: 8px 8px 0px 0px; */
 
 }
@@ -222,7 +222,7 @@ hr {
 
 .chapter {
     max-width:1000px;
-    /* margin: 20px auto; */
+    margin: 0px auto;
     padding: 0 30px;
     display:flex;
     flex-direction: column;
@@ -352,6 +352,10 @@ hr {
     cursor:pointer;
 }
 
+#thermo {
+    display: none;
+}
+
 
 @media only screen and (max-width: 1000px) {
     p {
@@ -389,44 +393,46 @@ hr {
 
 @media only screen and (max-width: 600px) {
     *{
-        font-size: 18px;
+        font-size: 12px;
     }
     /* a minimum size between 18 to 20 pixels is recommended for smaller screen sizes */
     /* .header img {
         padding:0px;
     } */
     header li {
-        font-size: 0.8em;
+        font-size: 0.5rem;
     }
     /* hr {
         text-align: center;
         width: 80%
     } */
-    .banner {
+    /* .banner {
         height: 200px ;
-    }
+    } */
     .banner-element h1{
         font-size: 3rem;
     }
-    /* .advantage-container {
+    .advantage-container {
         flex-direction: column;
-        align-items:center;
+        width: 80%
+        /* align-items:center;
         flex-wrap:wrap;
-        width: 100%;
+        width: 100%; */
     }
+
+    .advantage img{
+        width: 40%
+    } 
+    /*
     .advantage {
         width: 30%;
     }
     .advantage p {
         font-size: 1rem;
-    }
+    }*/
     .advantage h2{
-        font-size: 2rem;
-
+        font-size: 1.5rem;
     }
-    .advantage img{
-
-    } */
 }
 
 @media print {
