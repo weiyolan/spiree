@@ -12,27 +12,17 @@
 // }
 // setInterval(setRandomColor,1000);
 
-// ----Let form appear after clicking certain elements.----
-
-let form = document.getElementById('form1');
-let titleButton = document.getElementById('stayInTouch');
-let contactMe = document.getElementById('contactMe');
-
-function formAppear() {
-    form.style.opacity = 1;
-}
-
-titleButton.addEventListener('click',formAppear);
-contactMe.addEventListener('click',formAppear);
-
 //----Let chapters appear on scroll
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
-    
+    var navbar = document.getElementById("navbar");
+    var navbarTop = navbar.getBoundingClientRect().top;
+    // console.log(navbarTop);
+
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 100;
+        var elementVisible = 40;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
@@ -40,9 +30,20 @@ function reveal() {
             reveals[i].classList.remove("active");
         };
     };
+
+    if (window.visualViewport.pageTop > windowHeight-65) {
+        navbar.classList.add("visbar");
+    } else { navbar.classList.remove("visbar");
+    };
+
 };
 
 document.addEventListener("scroll", reveal);
+
+
 // document.addEventListener("load",reveal);
 // To check the scroll position on page load
 // reveal();
+
+
+

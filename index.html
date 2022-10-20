@@ -5,8 +5,13 @@
 <head>
   <!-- CHECK THIS OUT FOR ACCESSIBILITY INCREASE WITH BUTTONS:  https://inclusive-components.design/tooltips-toggletips/ -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
   <script src="./resources/js/script.js" defer></script>
+  <script src="./resources/js/modal.js" defer></script>
+  <script src="./resources/js/animateLogo.js" defer></script>
+  <script src="./resources/js/buttonFloat.js" defer></script>
+  <script src="./resources/js/form.js" defer></script>
   <!-- Title -->
   <title>Spirée | Sportswear</title>
   <!-- Favicon -->
@@ -16,13 +21,13 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Inter:wght@200;400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@200;400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
   <!-- Plugin for browser compatibility -->
   <script src="https://polyfill.io/v3/polyfill.min.js"></script>
 </head>
 
 <body>
-  <header>
+  <header id="navbar">
     <div class="header-left">
       <img src="./resources/images/spiree-logo-official-white.svg" id='headerLogo'/>
         <nav>
@@ -30,7 +35,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#story">The Story</a></li>
-          <li><a href="#contact" id="contactMe">Contact me!</a></li>
+          <li><a id="contactMe">Stay in touch!</a></li>
         </ul>
       </nav>
     </div>
@@ -41,19 +46,27 @@
   
   <main id="home">
     <div class="banner">
-      <div class="banner-element left">
-        <h1>Spirée</h1>
-        <h2>Woolen Sportswear</h2>
-      </div>
-      <div class="banner-element right">
+      <div class="banner-logo">
         <img id="banner-logo" src="./resources/images/spiree-logo-official-white.svg"/>
+        <div class="banner-element" id="banner-0">
+          <h1>- SPIREE -</h1>
+        </div>
+        <div class="banner-element" id="banner-1">
+          <h1>- 100% MERINO WOOL -</h1>
+        </div>
+        <div class="banner-element" id="banner-2">
+          <h1>- PRO SPORTSWEAR FOR WOMEN -</h1>
+        </div>
       </div>
       <!-- <div class="idioma">
         <h3>Vêtements running pour femme 100% laine mérinos</h3>
       </div> -->
-      <br>
-    </div>
+      <div class="arrow-down" id="arrow-down">
+        <a href="#idioma-list"><img src="./resources/images/arrow-down.png"/></a>
+      </div>
+    </div> 
 
+    <a class="anchor-1" id="idioma-list"></a>
     <div class="reveal chapter">
       <p id="idioma">Être bien équipée, c'est une bonne sortie course à pied assurée.</p>
       <p id="idioma">Spirée est une marque de vêtements techniques de course à pied pour femme, fabriquée entièrement avec de la laine mérinos.</p>
@@ -129,57 +142,63 @@
         </div>
       </div>
       
-      <div class="box">
+      
+
+    </div>
+
+    <div class="reveal chapter" id="contact">
+      <h1 id="stayInTouch">Keep in touch!<hr></h1>
+      
+      <div class=" box">
         <p>
           Les vêtements sont en cours de design. Patiente encore un petit peu et tu pourras faire partie des premières utilisatrices ! Pour pouvoir suivre l'avancement, connecte toi sur le compte instagram.
         </p>
       </div>
 
+
     </div>
+    
+    <div class="light-box" id="light-box">
+      <div class="form_container">
+        <span class="close" id="close">&times;</span class="close" id="close">
+        <form id="contact-form">
+          <h2>Want to know when our collection becomes available?</h2>
+          <div class="form__el">
+            <label for="name">First Name:  </label>
+            <input name="name" id='name' type="text" required/> 
 
-    <div class="chapter" id="contact">
-      <h1 id="stayInTouch">Restez au courant de la première série<hr></h1>
-
-      <div class="box" id="form1">
-        <p>
-          Contact: astrid@spirée.com
-        </p>
-      </div>
+            <label for="surname">Last Name: </label>
+            <input name="surname" id='surname' type="text" required/>  
+          </div> 
+          <div class="form__el">
+            <label for="email">Email: </label>
+            <input name="email" id='email' type="email" required/>
+          </div>
+          
+          <button id="submit" type="submit">Stay in Touch!</button>  
+        </form>
       
-      <!-- <form action="./results.html" method="GET" id="form1">
+        <div class="form-message" id="success">
+          <h2>Succes! You submitted your email address.</h2>
+          <h3>You will be informed when our collection becomes available ;)</h3>
+        </div>
 
-        <label for="fname">First name:</label>
-        <input type="text" name="fname" id="fname" required><br>
-
-        <label for="lname">Last name:</label>
-        <input type="text" name="lname" id="lname" required><br>
-
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age" required><br>
-
-        <label for="email">E-mail:</label>
-        <input type="text" name="email" id="email" required><br>
-
-        <label for="country">Country:</label>
-        <input type="datalist" name="country" id="country" required><br>
-
-        <label for="forwho">For whom would you buy a Spirée Running Shirt?</label><br>
-        <input type="checkbox" name="forwho" value="myself">For myself<br>
-        <input type="checkbox" name="forwho" value="friend">For a friend<br>
-        <input type="checkbox" name="forwho" value="family">For a family member!<br>
-
-        <input type="submit" value="Let's go!">
-
-      </form> -->
+        <div class="form-message" id="failure">
+          <h2>Jeez! That didn't work.</h2>
+          <h3>Please refresh the page and try again.</h3>
+        </div>
+      </div>
     </div>
-
+      
   </main>
 
   <footer >
     <p><a target="_blank" href="https://www.instagram.com/spiree_officiel/"><i class="fa-brands fa-instagram fa-xl"></i></a>
     <br><br>
     &copy; 2022 - Spirée
-  </p>
+    <br>
+    Contact: astrid@spirée.com
+    </p>
   </footer>
   
 </body>
