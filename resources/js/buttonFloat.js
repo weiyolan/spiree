@@ -2,7 +2,7 @@ let arrow = document.getElementById('arrow-down');
 
 
 function upDown() {
-    arrow.style.transform = 'translateY(6px)';
+    arrow.style.transform = 'translateY(9px)';
     setTimeout(()=>(arrow.style.transform = 'translateY(0px)'), 1000)
 }
 

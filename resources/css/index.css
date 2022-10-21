@@ -223,7 +223,7 @@ hr {
     /* align-content: center; */
     color:white;
 
-    background-image: url('../images/spiree-banner-2.jpg');
+    background-image: url('../images/spiree-banner-2-mobile.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
@@ -597,6 +597,11 @@ a.anchor-1 {
     /* border:0px; */
 }
 
+@media only screen and (min-width:720px) {
+    .banner {
+        background-image: url('../images/spiree-banner-2.jpg');
+    }
+}
 
 @media only screen and (max-width: 1000px) {
     p {
@@ -740,13 +745,17 @@ a.anchor-1 {
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     *{
         font-size: 12px;
     }
 
     header li {
         font-size: 0.5rem;
+    }
+
+    .banner {
+        background-position:-460px;
     }
 
     .banner-element {
