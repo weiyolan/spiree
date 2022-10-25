@@ -13,10 +13,10 @@
 // setInterval(setRandomColor,1000);
 
 //----Let chapters appear on scroll
-function reveal() {
+export function reveal() {
     var reveals = document.querySelectorAll(".reveal");
     var navbar = document.getElementById("navbar");
-    var navbarTop = navbar.getBoundingClientRect().top;
+    // var navbarTop = navbar.getBoundingClientRect().top;
     // console.log(navbarTop);
 
     for (var i = 0; i < reveals.length; i++) {
@@ -38,7 +38,7 @@ function reveal() {
 
 };
 
-document.addEventListener("scroll", reveal);
+// document.addEventListener("scroll", reveal);
 
 
 // document.addEventListener("load",reveal);

@@ -1,6 +1,7 @@
 //----Logo animation
+import {buttonAnimation} from './buttonFloat.js';
 
-const animateLogo = () => {
+export const animateLogo = () => {
     var logo = document.getElementById("banner-logo");
     var text = document.querySelectorAll(".banner-element");
     var t = 1000;
@@ -39,6 +40,9 @@ const animateLogo = () => {
 
     setTimeout(logoToBack, t*2)
     setTimeout(textAnimation, t*4)
+
+    buttonAnimation();
+
 }
 
 window.addEventListener("load",animateLogo);

@@ -1,3 +1,5 @@
+ @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@200;400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
+
 *{
     font-family: 'Manrope', sans-serif;
     margin: 0;
@@ -18,7 +20,7 @@
     --color-shadow: rgba(0, 0, 0, 0.2); */
     /*THEME---------------------------------------*/
     /* ff 3.6+ */   
-    --color-main-light:rgba(250, 167, 136, 1);
+    --color-main-light:#faa788;
     --color-main-light-simple:rgba(250, 167, 136, 1);
     --color-main-light:-moz-radial-gradient(circle at 0% 0%, #FAA788 60%, #FF7878 100%);
     --color-main-light:-webkit-radial-gradient(circle at 0% 0%, #FAA788 60%, #FF7878 100%);
@@ -104,7 +106,7 @@ header.visbar {
     /* flex:1; */
     /* width:70%; */
     align-items:center;
-    justify-content: start;
+    justify-content: flex-start;
     /* flex:1; */
 }
 header img {
@@ -127,7 +129,7 @@ header img {
 }
 header ul {
     display:flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-left: 0px;
     /* margin-left: 10px; */
 }
@@ -223,7 +225,7 @@ hr {
     /* align-content: center; */
     color:white;
 
-    background-image: url('../images/spiree-banner-2-mobile.jpg');
+    background-image: url('./images/spireeBanner2Mobile.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
@@ -299,7 +301,7 @@ a.anchor-1 {
 
 .banner-element {
     display: block;
-    opacity: 0;
+    opacity: 1;
     
     margin: 0 auto;
     filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342));
@@ -432,12 +434,16 @@ a.anchor-1 {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: 2s all ease;
+    transition: 1s all ease;
+    visibility: hidden;
+
   }
 
 .reveal.active{
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+
 }
 
 .light-box {
@@ -495,7 +501,7 @@ a.anchor-1 {
 }
 
 .form-message {
-    display:none;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -601,7 +607,7 @@ a.anchor-1 {
 
 @media only screen and (min-width:720px) {
     .banner {
-        background-image: url('../images/spiree-banner-2.jpg');
+        background-image: url('./images/spireeBanner2.jpg');
     }
 }
 
@@ -687,7 +693,7 @@ a.anchor-1 {
         align-items: center; 
         /* align-content: center; */
     
-        background-image: url('../images/spiree-banner-2.jpg');
+        background-image: url('./images/spireeBanner2.jpg');
         background-repeat: no-repeat;
         background-size:cover;
         background-position:center;
