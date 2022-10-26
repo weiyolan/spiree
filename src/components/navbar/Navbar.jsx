@@ -1,10 +1,22 @@
-import React from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import './navbar.css';
 
 
 const Navbar = (props) => {
+    const ref = useRef();
+    const [visible,setVisible] = useState(false);
+
+    useEffect(()=>{
+        // console.log(ref.current)
+        let event = document.addEventListener('scroll',()=>{
+            setVisible((window.visualViewport.pageTop >= window.visualViewport.height - ref.current.getBoundingClientRect().height)?true:false)
+        });
+        return () => {document.removeEventListener(event)}
+        // console.log(visible);
+    },[])
+
     return (
-        <header id="navbar">
+        <header className={visible?'visbar':''} ref={ref} id="navbar">
             <div className="header-left">
                 <img alt="logo" src={props.spireeLogo}  id='headerLogo'/>
                     <nav>

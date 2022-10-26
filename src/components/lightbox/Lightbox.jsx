@@ -16,52 +16,44 @@ const Lightbox = ({handleClick,flag}) => {
 
     let [submitted,setSubmitted] = useState(false);
     let [success, setSuccess] = useState(false);
+    let [loading,setLoading] = useState(false);
+
     let [email,setEmail] = useState('');
     let [name,setName] = useState('');
     let [surname,setSurname] = useState('');
 
-    const updateValues = (name,surname,email) => {
-        if (email) {setEmail(email)};
-        if (name) {setName(name.charAt(0).toUpperCase() + name.slice(1))};
-        if (surname) {setSurname(surname.charAt(0).toUpperCase() + surname.slice(1))};
-    };
+    // useEffect(()=>{
+    //     console.log('UseEffect:')
+    //     console.log(email);
+    //     console.log(name);
+    //     console.log(surname);
+    // },[email,surname,name])
 
-    const headers_ = {
-        'Authorization': 'Bearer keyoGVRavQjrgVp6e',
-        'Content-Type': 'application/json'
-    };
-
-    const submitForm = async (e) => {
-        updateValues(name,surname,email);
-        e.preventDefault();
+    const submitForm = async (name,surname,email) => {
         try {
-            const response = await fetch("https://api.airtable.com/v0/appITs3uxExXOohSN/Sheet1",{
-                method: 'POST',    
-                body: JSON.stringify(
-                    {
-                        records: [
-                        {
-                            fields: {
-                                email: email,
-                                name: name,
-                                surname: surname,
-                            }
-                        }
-                        ]
-                    }),
-                headers: headers_
-            }); 
+            console.log('submitting form')
+            setEmail(email);
+            setName(name);
+            setSurname(surname);
 
-            console.log(response);
-
+            setLoading(true);
             setSubmitted(true);
-            setSuccess(true);
+            let response;
+            response = await fetch(`/.netlify/functions/saveEmail?email=${email}&name=${name}&surname=${surname}`);
+
+            // console.log(response);
+            if (response.ok) {
+                setSuccess(true);
+                console.log(response);
+            }
 
         } catch (error) {
+            setSuccess(false);
+            console.log('ERROR')
             console.log(error);
 
-            setSubmitted(true);
-            setSuccess(false);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -70,7 +62,7 @@ const Lightbox = ({handleClick,flag}) => {
             <div className="form_container">
                 <span className="close" id="close" onClick={handleClick}>&times;</span>
                 
-                {!submitted && <Form updateValues={updateValues} handleSubmit={submitForm} id="contact-form"/>}
+                {!submitted && <Form handleSubmit={submitForm} id="contact-form"/>}
 
                 {submitted && success && <div className="form-message">
                     <h2>{`Hey ${name}, that's a success`}!</h2> 

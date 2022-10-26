@@ -6,13 +6,24 @@ const Form = (props) => {
     let [name,setName] = useState('');
     let [surname,setSurname] = useState('');
 
-    const handleChange = (e) => {
-        e.preventDefault();        
-        props.updateValues(name,surname,email);
+    const beautifulStrings = (name,surname,email) => {
+        setEmail(email);
+        setName(name.charAt(0).toUpperCase() + name.slice(1));
+        setSurname(surname.charAt(0).toUpperCase() + surname.slice(1));
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        beautifulStrings(name,surname,email);
+
+        props.handleSubmit(name,surname,email);
     }
 
+
     return (
-        <form onChange={handleChange} onSubmit={props.handleSubmit} id={props.id}>
+        <form onSubmit={handleSubmit} id={props.id}>
             <h2>Want to know when our collection becomes available?</h2>
             <div className="form__el">
                 <label for="name">First Name:  </label>
