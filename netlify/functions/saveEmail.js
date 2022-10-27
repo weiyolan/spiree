@@ -3,7 +3,7 @@ const axios = require('axios');
 
 
 
-exports.handler = async function (event, context) {
+const handler = async (event) => {
     // console.log('API KEYYYYY:')
     // // console.log('Authorization:'+ `Bearer ${proces.env.REACT_APP_API_KEY}`)
     // console.log('Event:')
@@ -12,7 +12,11 @@ exports.handler = async function (event, context) {
 
 
     try {
-        const {name, email, surname } = event.queryStringParameters;
+
+    
+        const name = event.queryStringParameters.name || 'test';
+        const email =  event.queryStringParameters.email || 'test';
+        const surname =  event.queryStringParameters.surname || 'test@test.tes';
         
         const data = {
             records: [
@@ -20,45 +24,39 @@ exports.handler = async function (event, context) {
                     fields: {
                         email: email,
                         name: name,
-                        surname: surname,
+                        surname: surname
                     }
                 }
                 ]
         };
 
         const headers_ = {
-            'Authorization': `Bearer ${proces.env.REACT_APP_API_KEY}`,
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
             'Content-Type': 'application/json'
         };
 
         const config = {
-            headers: headers_,
+            headers: headers_
         }
 
-        // console.log('CONFIGG')
-        // console.log(config);
+        const url = `https://api.airtable.com/v0/${process.env.REACT_APP_API_ID}/Sheet1`;
 
-        // const response = await axios.post(`https://api.airtable.com/v0/${APP_ID}/Sheet1`, data, config);
-
-        const response = await fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_APP_ID}/Sheet1`,
-        {
-            method: 'POST',    
-            body: JSON.stringify(data),
-            headers: headers_
-        })
+        const response = await axios.post(url, data, config);
 
 
         return { 
                 statusCode: 200,
-                body: JSON.stringify(response),
+                body: JSON.stringify(response.data),
                 ok:true
             };
     
     } catch (err) {
-        throw {
+        return {
                 statusCode: 404,
-                body: JSON.stringify(err),
+                body: err.toString(),
                 ok:false
             };
     };
 };
+
+module.exports = { handler }
